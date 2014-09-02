@@ -1,5 +1,6 @@
 <h1 id="navbar" class="page-header">Loads</h1>
 
+<%= link_to 'New Load', new_load_path %>
 <% @loads.each do |load| %>
   <div class="load">
     <strong><%= load.origin %></strong>
