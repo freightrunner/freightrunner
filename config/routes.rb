@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :carriers
+
   devise_for :users
   resources :loads
 
