@@ -9,7 +9,14 @@ class CarriersController < ApplicationController
 
   # GET /carriers/1
   # GET /carriers/1.json
-  def show
+  def show_loads
+  		@carrier = carrier.find_by_mc(params[:id])
+  			if @carriers
+  				@loads = @carrier.loads.all
+  				render action: :show
+  			else
+  				render file: 'public/404', status: 404, formats: [:html]
+  			end
   end
 
   # GET /carriers/new
