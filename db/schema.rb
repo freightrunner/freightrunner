@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903061137) do
+ActiveRecord::Schema.define(version: 20140903062208) do
+
+  create_table "bookings", force: true do |t|
+    t.integer  "carrier_id"
+    t.integer  "load_id"
+    t.datetime "booking_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "carriers", force: true do |t|
     t.string   "name"
