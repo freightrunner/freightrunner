@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903062208) do
+ActiveRecord::Schema.define(version: 20140903161657) do
 
   create_table "bookings", force: true do |t|
     t.integer  "carrier_id"
@@ -23,9 +23,10 @@ ActiveRecord::Schema.define(version: 20140903062208) do
 
   create_table "carriers", force: true do |t|
     t.string   "name"
-    t.integer  "md"
+    t.integer  "mc_no"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "dot_no"
   end
 
   create_table "loads", force: true do |t|
@@ -34,8 +35,10 @@ ActiveRecord::Schema.define(version: 20140903062208) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "carrier_id"
   end
 
+  add_index "loads", ["carrier_id"], name: "index_loads_on_carrier_id"
   add_index "loads", ["user_id"], name: "index_loads_on_user_id"
 
   create_table "users", force: true do |t|
