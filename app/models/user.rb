@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :loads
   accepts_nested_attributes_for :loads
+  belongs_to :account
+  has_many :carriers
 end
