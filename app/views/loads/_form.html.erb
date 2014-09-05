@@ -1,25 +1,11 @@
-<%= form_for(@load) do |f| %>
-  <% if @load.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@load.errors.count, "error") %> prohibited this load from being saved:</h2>
+<%= simple_form_for(@load) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @load.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :origin %><br>
-    <%= f.text_field :origin %>
+  <div class="form-inputs">
+    <%= f.input :origin %><br>
+    <%= f.input :destination %><br>
   </div>
-  <div class="field">
-    <%= f.label :destination %><br>
-    <%= f.text_field :destination %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>
