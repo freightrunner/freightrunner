@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :loads
   belongs_to :account
   has_many :carriers
+ 	has_many :bookings
   	
   	validates :first_name, :last_name, :email, presence: true
+  	
+  	def full_name
+  		first_name + " " + last_name
+  	end
 end
