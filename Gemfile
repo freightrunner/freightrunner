@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'devise'
 gem 'simple_form', '~>3.1.0.rc2'
 gem 'jquery-ui-rails', '~> 5.0.0'
+gem 'rails4-autocomplete'
 # Use unicorn as the app server
 # gem 'unicorn'
 
