@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   resources :carriers
 
+  resources :suggestions do
+    get :autocomplete_account_name, :on => :collection
+  end
+
   devise_for :users
 
 devise_scope :user do

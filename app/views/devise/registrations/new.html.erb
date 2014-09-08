@@ -1,7 +1,13 @@
-<h2>Sign up</h2>
+<div class="row">
+  <div class="col-sm-5">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "well"}) do |f| %>
+      <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <fieldset>
+      <legend>Sign Up</legend>
+
+        <%= f.input :account_name, :url => autocomplete_account_name_suggestions_path %>
+        <%= f.input :first_name %>
 
   <div><%= f.label :first_name %>
   	<%= f.text_field :first_name %></div>
