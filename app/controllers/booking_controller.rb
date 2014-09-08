@@ -1,2 +1,3 @@
 class BookingController < ApplicationController
+	
 end

@@ -1,5 +1,5 @@
 class LoadsController < ApplicationController
-  before_action :set_load, only: [:show, :edit, :update, :destroy]
+  before_action :set_load, only: [:show, :edit, :update, :destroy, :add_carrier]
 
   # GET /loads
   # GET /loads.json
