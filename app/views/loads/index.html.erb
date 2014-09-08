@@ -1,13 +1,16 @@
 <h1 id="navbar" class="page-header">Loads</h1>
 
-<%= link_to 'New Load', new_load_path %>
+<%= link_to 'New Load', new_load_path, class: "btn btn-default" %>
+
 <% @loads.each do |load| %>
   <div class="load">
     <strong><%= load.origin %></strong>
-    <p><%= load.destination %></p>
+    <p><%= load.pick_date %><%= load.pick_time %></p>
+    <strong><%= load.destination %></strong>
+    <p><%= load.drop_date %><%= load.drop_time %></p>
   </div>
   <div class="meta">
-    <%= link_to time_ago_in_words(load.created_at), load %>
+    <%= link_to time_ago_in_words(load.created_at) + "ago", load %>
     <span class="admin">
       | <%= link_to 'Edit', edit_load_path(load) %>| 
      <%= link_to 'Delete', load, method: :delete, data: {confirm: "Are you sure you want to delete this load?"} %>
