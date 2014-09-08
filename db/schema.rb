@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905121818) do
+ActiveRecord::Schema.define(version: 20140908190843) do
 
   create_table "accounts", force: true do |t|
     t.datetime "created_at"
@@ -55,8 +55,10 @@ ActiveRecord::Schema.define(version: 20140905121818) do
     t.time     "drop_time"
     t.integer  "picks",                                 default: 1
     t.integer  "drops",                                 default: 1
+    t.integer  "account_id"
   end
 
+  add_index "loads", ["account_id"], name: "index_loads_on_account_id"
   add_index "loads", ["carrier_id"], name: "index_loads_on_carrier_id"
   add_index "loads", ["user_id"], name: "index_loads_on_user_id"
 
