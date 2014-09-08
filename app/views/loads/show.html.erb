@@ -6,8 +6,18 @@
 </p>
 
 <p>
+	<strong>Pickup:</strong>
+	<%= @load.pick_date %>, <%= @load.pick_time %>
+</p>
+
+<p>
   <strong>Destination:</strong>
   <%= @load.destination %>
+</p>
+
+<p>
+	<strong>Delivery:</strong>
+	<%= @load.drop_date %>, <%= @load.drop_time %>
 </p>
 
 <%= link_to 'Edit', edit_load_path(@load) %> |
