@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905020914) do
+ActiveRecord::Schema.define(version: 20140905121818) do
 
   create_table "accounts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "booking_histories", force: true do |t|
@@ -46,6 +47,14 @@ ActiveRecord::Schema.define(version: 20140905020914) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "carrier_id"
+    t.decimal  "pay_truck",     precision: 8, scale: 2
+    t.decimal  "bill_customer", precision: 8, scale: 2
+    t.date     "pick_date"
+    t.time     "pick_time"
+    t.date     "drop_date"
+    t.time     "drop_time"
+    t.integer  "picks",                                 default: 1
+    t.integer  "drops",                                 default: 1
   end
 
   add_index "loads", ["carrier_id"], name: "index_loads_on_carrier_id"
