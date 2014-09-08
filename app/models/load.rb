@@ -4,4 +4,6 @@ class Load < ActiveRecord::Base
 	has_many :carriers, through: :bookings
 	accepts_nested_attributes_for :bookings
 	accepts_nested_attributes_for :carriers
+
+	before_action :authenticate_user!, only: [:new, :create]
 end
