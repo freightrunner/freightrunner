@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'simple_form', '~>3.1.0.rc2'
+gem 'jquery-ui-rails', '~> 5.0.0'
 # Use unicorn as the app server
 # gem 'unicorn'
 
