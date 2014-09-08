@@ -37,6 +37,9 @@ class LoadsController < ApplicationController
     end
   end
 
+  def add_carrier
+  end
+
   # PATCH/PUT /loads/1
   # PATCH/PUT /loads/1.json
   def update
