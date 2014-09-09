@@ -1,6 +1,6 @@
 class LoadsController < ApplicationController
   before_action :set_load, only: [:show, :edit, :update, :destroy, :add_carrier]
-
+  before_action :authenticate_user!, only: [:new, :create]
   # GET /loads
   # GET /loads.json
   def index
