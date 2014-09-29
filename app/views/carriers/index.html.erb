@@ -1,27 +1,19 @@
-<h1>Listing carriers</h1>
+<h1>Your Carriers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Md</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= link_to 'New Carrier', new_carrier_path, class: "btn btn-default" %>
 
-  <tbody>
-    <% @carriers.each do |carrier| %>
-      <tr>
-        <td><%= carrier.name %></td>
-        <td><%= carrier.md %></td>
-        <td><%= link_to 'Show', carrier %></td>
-        <td><%= link_to 'Edit', edit_carrier_path(carrier) %></td>
-        <td><%= link_to 'Destroy', carrier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @carriers.each do |carrier| %>
+  <div class="carrier">
+    <strong><%= link_to carrier.name, carrier %></strong>
+  </div>
+  <div class="meta">
+    <%= link_to time_ago_in_words(carrier.created_at) + "ago", carrier %>
+    <span class="admin">
+      | <%= link_to 'Edit', edit_carrier_path(carrier) %>| 
+     <%= link_to 'Delete', carrier, method: :delete, data: {confirm: "Are you sure you want to delete this carrier?"} %>
+    </span>
+  </div>
+<% end %>
 
-<br>
 
-<%= link_to 'New Carrier', new_carrier_path %>
+

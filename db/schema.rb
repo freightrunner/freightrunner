@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908192051) do
+ActiveRecord::Schema.define(version: 20140929173801) do
 
   create_table "accounts", force: true do |t|
     t.datetime "created_at"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140908192051) do
     t.integer  "dot_no"
     t.integer  "user_id"
     t.integer  "account_id"
+    t.integer  "phone_number"
   end
 
   add_index "carriers", ["account_id"], name: "index_carriers_on_account_id"
