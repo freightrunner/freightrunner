@@ -5,6 +5,7 @@
 <% @carriers.each do |carrier| %>
   <div class="carrier">
     <strong><%= link_to carrier.name, carrier %></strong>
+    <p><%= carrier.phone_number %></p>
   </div>
   <div class="meta">
     <%= link_to time_ago_in_words(carrier.created_at) + "ago", carrier %>

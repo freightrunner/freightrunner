@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   	devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:first_name, 
   														   :last_name,
   														   :email, :password,
-  														   :password_confirmation)}
+  														   :password_confirmation, :account_name)}
   end
 end
