@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :loads
   accepts_nested_attributes_for :loads
-  belongs_to :account
+  has_and_belongs_to_many :accounts
   has_many :carriers
  	has_many :bookings
   	
